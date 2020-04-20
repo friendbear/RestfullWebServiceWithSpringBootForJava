@@ -1,44 +1,69 @@
 package org.bearsworld.rest.webservice.restfulwebservices.filter;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties(value={"value1"})
+@JsonFilter("SomeBeanFilter")
+@JsonIgnoreProperties(value={"field1"})
 public class SomeBean {
 
-    private String value1;
-    private String value2;
+    private String field1;
 
     @JsonIgnore
-    private String value3;
+    private String field2;
 
-    public SomeBean(String value1, String value2, String value3) {
-        this.value1 = value1;
-        this.value2 = value2;
-        this.value3 = value3;
+    private String field3;
+
+    private String field4;
+
+    private String field5;
+
+    public SomeBean(String field1, String field2, String field3, String field4, String field5) {
+        this.field1 = field1;
+        this.field2 = field2;
+        this.field3 = field3;
+        this.field4 = field4;
+        this.field5 = field5;
     }
 
     public String getValue1() {
-        return value1;
+        return field1;
     }
 
-    public void setValue1(String value1) {
-        this.value1 = value1;
+    public void setValue1(String field1) {
+        this.field1 = field1;
     }
 
     public String getValue2() {
-        return value2;
+        return field2;
     }
 
-    public void setValue2(String value2) {
-        this.value2 = value2;
+    public void setValue2(String field2) {
+        this.field2 = field2;
     }
 
     public String getValue3() {
-        return value3;
+        return field3;
     }
 
-    public void setValue3(String value3) {
-        this.value3 = value3;
+    public void setValue3(String field3) {
+        this.field3 = field3;
+    }
+
+    public String getField4() {
+        return field4;
+    }
+
+    public void setField4(String field4) {
+        this.field4 = field4;
+    }
+
+    public String getField5() {
+        return field5;
+    }
+
+    public void setField5(String field5) {
+        this.field5 = field5;
     }
 }
