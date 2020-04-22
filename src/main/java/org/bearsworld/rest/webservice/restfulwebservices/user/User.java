@@ -6,9 +6,11 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
@@ -34,6 +36,11 @@ public class User {
     @Getter
     @Setter
     private Date birthDate;
+
+    @Getter
+    @Setter
+    @OneToMany(mappedBy="user")
+    private List<Post> posts;
 
     @Override
     public String toString() {
